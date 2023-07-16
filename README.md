@@ -331,33 +331,36 @@ In the following sections, we will delve deeper into Python's unique syntax, its
 ## Section 3.3: Python Syntax
 The design and layout of a programming language's syntax significantly influence its usability and learning curve. Python is no exception and its syntax has been thoughtfully designed to be intuitive, clean, and consistent.
 
-3.3.1 The Readability Emphasis of Python Syntax
+### 3.3.1 The Readability Emphasis of Python Syntax
+
 The syntax of Python is purposely designed to be clean and readable. The guiding philosophy is that code is read much more often than it's written. The language places a lot of emphasis on readability with a straightforward syntax that often reads like English. This quality makes Python an ideal language for beginners and a great choice for experts.
 
 Whitespace, such as spaces and tabs, is utilized in Python as a means to delineate code blocks. Unlike other languages that use curly brackets or keywords, Python uses indentation to define the beginning and end of functions, loops, classes, and conditional blocks. This feature enforces a uniform structure and layout, enhancing readability.
 
-python
-Copy code
+```python
 def greet(name):
     print(f"Hello, {name}!")
+```
+
 In the above Python function, indentation is used to signify the contents of the function greet. The print statement is indented to show that it's a part of the greet function.
 
-3.3.2 Basic Python Syntax Rules
+### 3.3.2 Basic Python Syntax Rules
+
 Python's syntax rules are uncomplicated, and they streamline the process of coding. Here are some essential syntax elements:
 
 Variable Declaration:
 In Python, declaring a variable is as simple as giving it a name and assigning it a value using the equals (=) sign. Python is dynamically-typed, which means you don't need to specify the type of data a variable will hold.
 
-python
-Copy code
+```python
 x = 10  # integer
 y = "Hello World"  # string
 z = 3.14  # float
+```
+
 Control Structures:
 Python uses common control structures such as if-else conditions and while/for loops. The end of these blocks is defined by the indentation level.
 
-python
-Copy code
+```python
 # if-else statement
 x = 10
 if x > 0:
@@ -373,21 +376,26 @@ while x > 0:
 # for loop
 for i in range(5):
     print(i)
+```
+
 Functions:
 Functions in Python are declared using the def keyword. Arguments are placed in parentheses after the function name, and the function body is indented under the function declaration.
 
-python
-Copy code
+```python
 def add_numbers(a, b):
     return a + b
+```
+
 Classes:
 Python supports object-oriented programming. You define a class using the class keyword. Similar to functions, the contents of a class are indented under the class declaration.
 
-python
-Copy code
+```python
 class MyClass:
     x = 5
-3.3.3 Ease of Writing and Reading Code
+```
+
+### 3.3.3 Ease of Writing and Reading Code
+
 Python's emphasis on readability and its English-like syntax make it a remarkably easy language to both write and read. This simplicity significantly lowers the barrier to entry for new programmers and allows experienced developers to focus on solving problems rather than deciphering complex syntax rules.
 
 Python's syntax also contributes to its versatility. From scripting and automation to web development, data science, artificial intelligence, and more, Python's clear and intuitive syntax is a key ingredient in its success as a multi-purpose language.
@@ -538,21 +546,22 @@ One of the key distinctions between JavaScript and TypeScript is TypeScript's in
 
 Let's take a look at a basic TypeScript syntax example:
 
-typescript
-Copy code
+```typescript
 let message: string;
 message = 'Hello, TypeScript';
+```
+
 In this snippet, message is a variable of type string. If you try to assign a different type of value, like a number, TypeScript will show a compilation error:
 
-typescript
-Copy code
+```typescript
 message = 42;  // Error: Type 'number' is not assignable to type 'string'.
+```
+
 In addition to primitive types (string, number, boolean), TypeScript introduces complex types like array, tuple, and enum. Moreover, TypeScript provides advanced typing features such as interfaces and generics, not found in regular JavaScript, allowing you to create complex types and reusable components.
 
 For instance, interfaces in TypeScript allow you to define the structure of an object:
 
-typescript
-Copy code
+```typescript
 interface Person {
     name: string;
     age: number;
@@ -562,15 +571,18 @@ let user: Person = {
     name: 'Alice',
     age: 25
 };
+```
+
 Generics provide a way to create reusable components, which can work over a variety of types rather than a single one:
 
-typescript
-Copy code
+```typescript
 function identity<T>(arg: T): T {
     return arg;
 }
 
 let output = identity<string>('myString');  // type of output will be 'string'
+```
+
 Despite its similarities to JavaScript, TypeScript introduces several constructs to add static typing and object-oriented programming features to JavaScript's flexible and dynamic nature. TypeScript's type system helps create robust, maintainable codebases and provides developers with powerful tools for abstraction and reuse.
 
 In the next section, we will delve into TypeScript's design philosophy and understand the reasons behind its specific features. This understanding will help us appreciate the strengths and weaknesses of TypeScript, which we will discuss later in this chapter.
@@ -775,8 +787,7 @@ Verbose and Less Readable Code: Compared to more modern, higher-level languages 
 
 To illustrate these weaknesses, let's consider an example of memory management in C++. Suppose we have a function that creates an object on the heap and returns a pointer to it. If the caller of this function forgets to delete the object when it's done with it, we have a memory leak. If another part of the program then tries to access this object after it has been deleted, we have a dangling pointer. Both of these bugs can be hard to track down, and they can cause crashes or other unexpected behavior.
 
-cpp
-Copy code
+```cpp
 MyObject* createObject() {
     return new MyObject();
 }
@@ -786,6 +797,8 @@ void someFunction() {
     // use obj
     // forget to delete obj
 }
+```
+
 These challenges should not deter one from using C++, but they do underscore the importance of careful programming and thorough testing when working with this language. By considering both the strengths and weaknesses of C++, Python, and TypeScript in the coming chapters, we can form a more balanced understanding of when to use each language.
 
 ## Section 5.7: Conclusion
@@ -816,113 +829,124 @@ Let's begin our exploration with the fundamental concept of any programming lang
 
 As we embark on this comparative journey through the syntax and semantics of Python, TypeScript, and C++, it's best to start at the beginning with the most fundamental aspect of any language: variable declaration and data types. The way a language handles variable declaration and data types can have significant implications for the clarity of code, ease of use, and types of errors programmers may encounter.
 
-Variable Declaration
+### Variable Declaration
 
 In Python, variables are dynamically typed, meaning that their type is inferred at runtime, and a variable can change its type over the course of its lifetime. Declaring a variable in Python involves simply assigning a value to a variable name without any prior declaration or type specification:
 
-python
-Copy code
+```python
 x = 10  # integer
 x = "Hello"  # string
+```
+
 TypeScript, being a superset of JavaScript, retains JavaScript's var, let, and const for variable declaration but introduces static typing. Variables can be declared without a type, in which case they are implicitly given the any type, or with a type:
 
-typescript
-Copy code
+```typescript
 let x = 10;  // number
 let y: string = "Hello";  // string
+```
+
 C++, being a statically typed language, requires explicit type declaration before a variable is used. The type of a variable, once declared, cannot be changed:
 
-cpp
-Copy code
+```cpp
 int x = 10;  // integer
 std::string y = "Hello";  // string
-Data Types
+```
+
+### Data Types
 
 The data types supported by a language directly affect the kinds of information that programs can represent and manipulate.
 
 Python supports a wide range of data types, including integers, floating-point numbers, strings, lists, dictionaries, sets, and more. Because Python is dynamically typed, the type of a variable can change over time, which allows for a great deal of flexibility but also puts the onus on the programmer to track variable types and avoid type-related errors:
 
-python
-Copy code
+```python
 x = 10  # x is an integer
 x = 10.0  # now x is a float
 x = "Hello"  # now x is a string
+```
+
 TypeScript has a rich set of data types, including number, string, array, tuple, enum, any, void, null, and undefined. TypeScript's static typing system helps catch type-related errors at compile time:
 
-typescript
-Copy code
+```typescript
 let x: number = 10;  // x is a number
 let y: string = "Hello";  // y is a string
 let z: boolean = true;  // z is a boolean
+```
+
 C++ has primitive data types like int, float, double, char, and bool, and compound types like string, array, and struct. The static typing system of C++ helps to catch type-related errors at compile time, and it can also help make the code run more efficiently:
 
-cpp
-Copy code
+```cpp
 int x = 10;  // x is an integer
 float y = 10.0;  // y is a float
 std::string z = "Hello";  // z is a string
+```
+
 In conclusion, while Python's dynamic typing system provides flexibility, TypeScript and C++ with their static typing can help catch errors at compile time. The choice between dynamic and static typing often depends on the specific needs and constraints of a project. We will see more implications of these differences as we delve deeper into the intricacies of Python, TypeScript, and C++.
 
 ## Section 6.3: Control Structures: Loops, Conditionals
 
 Control structures are the backbone of programming languages, guiding the flow of execution through our code. While they share many commonalities, the syntax and specific usage of control structures like loops and conditionals can vary significantly between Python, TypeScript, and C++.
 
-Loops
+### Loops
 
 In Python, loops can be constructed using the for and while keywords. The for loop is typically used to iterate over a sequence (like a list, tuple, or string), with a range of numbers, or with an iterator:
 
-python
-Copy code
+```python
 for i in range(5):
     print(i)  # prints numbers 0 to 4
+```
+
 The while loop continues until the condition specified is False:
 
-python
-Copy code
+```python
 i = 0
 while i < 5:
     print(i)
     i += 1  # prints numbers 0 to 4
+```
+
 In TypeScript, for, while, and do-while loops are used. The for loop, similar to other C-based languages, has three components: initialization, condition, and iteration:
 
-typescript
-Copy code
+```typescript
 for(let i = 0; i < 5; i++) {
     console.log(i);  // prints numbers 0 to 4
 }
+```
+
 The while and do-while loops operate similarly to Python:
 
-typescript
-Copy code
+```typescript
 let i = 0;
 while(i < 5) {
     console.log(i);
     i++;
 }  // prints numbers 0 to 4
+```
+
 C++ supports for, while, and do-while loops similar to TypeScript:
 
-cpp
-Copy code
+```cpp
 for(int i = 0; i < 5; i++) {
     std::cout << i;  // prints numbers 0 to 4
 }
-Conditionals
+```
+
+### Conditionals
 
 Python uses if, elif (stands for else if), and else for conditional statements. Indentation plays a crucial role in Python, which does not use braces to denote blocks of code:
 
-python
-Copy code
+```python
 x = 10
 if x < 0:
     print("negative")
 elif x == 0:
     print("zero")
 else:
-    print("positive")  // prints "positive"
+    print("positive")  # prints "positive"
+```
+
 In TypeScript and C++, conditionals are constructed with if, else if, and else. Braces denote blocks of code:
 
-typescript
-Copy code
+```typescript
 let x = 10;
 if(x < 0) {
     console.log("negative");
@@ -931,10 +955,11 @@ if(x < 0) {
 } else {
     console.log("positive");  // prints "positive"
 }
+```
+
 The C++ syntax is similar:
 
-cpp
-Copy code
+```cpp
 int x = 10;
 if(x < 0) {
     std::cout << "negative";
@@ -943,35 +968,38 @@ if(x < 0) {
 } else {
     std::cout << "positive";  // prints "positive"
 }
+```
+
 In summary, while the concept of loops and conditionals remains the same across these languages, Python opts for simplicity and readability with less punctuation and reliance on indentation. TypeScript and C++ adhere to the syntax style of C-based languages, using braces to denote blocks of code. The choice of style can affect readability and can be a matter of preference or specific project needs.
 
 ## Section 6.4: Functions and Methods
 
 Functions and methods are essential building blocks in programming, allowing us to encapsulate and reuse logic throughout our programs. While the general principles of functions and methods are consistent across Python, TypeScript, and C++, there are subtle differences in their declaration, usage, and context within objects.
 
-Functions
+### Functions
 
 In Python, functions are defined using the def keyword followed by the function name and parentheses. Any input parameters are placed within these parentheses, and the function block begins with a colon and is indented:
 
-python
-Copy code
+```python
 def greet(name):
     print(f"Hello, {name}")
     
 greet("Alice")  # prints "Hello, Alice"
+```
+
 TypeScript, like JavaScript, provides several ways to define a function. The traditional function definition is very similar to other C-style languages, using the function keyword:
 
-typescript
-Copy code
+```typescript
 function greet(name: string) {
     console.log(`Hello, ${name}`);
 }
 
 greet("Alice");  // prints "Hello, Alice"
+```
+
 In C++, a function must be declared with a specific type, which denotes the type of value the function returns. If no value is to be returned, the void keyword is used:
 
-cpp
-Copy code
+```cpp
 #include <iostream>
 #include <string>
 
@@ -983,24 +1011,26 @@ int main() {
     greet("Alice");  // prints "Hello, Alice"
     return 0;
 }
-Methods
+```
+
+### Methods
 
 Methods are functions that are associated with a specific object. The syntax for methods is similar to functions in each language, but they are defined within the context of a class.
 
 In Python, methods are defined within a class using the def keyword, similar to a standalone function. All methods have a special first parameter, self, which is a reference to the instance of the class:
 
-python
-Copy code
+```python
 class Greeter:
     def greet(self, name):
         print(f"Hello, {name}")
 
 greeter = Greeter()
 greeter.greet("Alice")  // prints "Hello, Alice"
+```
+
 TypeScript methods are defined inside a class using a function declaration without the function keyword. The method is then called on an instance of the class:
 
-typescript
-Copy code
+```typescript
 class Greeter {
     greet(name: string) {
         console.log(`Hello, ${name}`);
@@ -1009,10 +1039,11 @@ class Greeter {
 
 let greeter = new Greeter();
 greeter.greet("Alice");  // prints "Hello, Alice"
+```
+
 In C++, methods (often referred to as member functions) are declared within a class and defined either inline or outside the class declaration. Within a class method, this pointer refers to the object invoking the method:
 
-cpp
-Copy code
+```cpp
 #include <iostream>
 #include <string>
 
@@ -1028,30 +1059,32 @@ int main() {
     greeter.greet("Alice");  // prints "Hello, Alice"
     return 0;
 }
+```
+
 While the syntax of functions and methods vary between these languages, the underlying principles remain the same: they provide a way to encapsulate logic for reuse and organization. However, the ways in which they are declared and used, and how they interact with the data within objects, can have significant impacts on the design and structure of your code. In the next section, we will look at another crucial aspect of programming: error handling and exceptions.
 
 ## Section 6.5: Error Handling and Exceptions
 
 Programming involves not only writing codes that work but also managing situations when things don't go as expected. This is where error handling and exceptions come into play. Despite the universal need for error handling across all programming languages, the approach varies considerably between Python, TypeScript, and C++. This section provides a comparative analysis of error handling and exceptions in these languages.
 
-Error Handling in Python
+### Error Handling in Python
 
 In Python, the philosophy for error handling is captured by a common acronym EAFP: "Easier to Ask for Forgiveness than Permission". This idiomatic approach is characterized by making optimistic assumptions about the existence of resources, and handling exceptions if assumptions prove false. The try/except block is fundamental to Python's error handling:
 
-python
-Copy code
+```python
 try:
     file = open('non_existent_file.txt', 'r')
 except IOError as e:
     print("File not found:", e)
+```
+
 Python uses exceptions for a broad range of error types - from system level errors such as 'File not found' to language level exceptions such as 'Type error'. It offers a rich hierarchy of built-in exceptions that you can handle in your code.
 
-Error Handling in TypeScript
+### Error Handling in TypeScript
 
 TypeScript, and JavaScript as a whole, doesn't follow the EAFP philosophy like Python. Instead, it uses the try/catch/finally construct for handling exceptions, similar to many C-style languages. TypeScript doesn't have a rich hierarchy of exceptions like Python but does have a basic Error object that can be extended to define custom error types:
 
-typescript
-Copy code
+```typescript
 try {
     throw new Error('An error occurred');
 } catch (e) {
@@ -1059,14 +1092,15 @@ try {
 } finally {
     console.log('Cleanup code goes here');
 }
+```
+
 TypeScript encourages checking for errors or exceptional conditions before the execution of a block of code – this is often referred to as LBYL (Look Before You Leap) approach.
 
-Error Handling in C++
+### Error Handling in C++
 
 C++ provides several mechanisms for handling errors, including function return values, errno, and exceptions. While return codes are a common way to handle errors, they can be easily ignored by the developer. Using exceptions for error handling is generally recommended for new C++ code:
 
-cpp
-Copy code
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -1084,9 +1118,11 @@ int main() {
     
     return 0;
 }
+```
+
 C++ has a hierarchy of exception classes that are all derived from std::exception. Exceptions allow the separation of error detection from its handling, making the code cleaner and less error-prone.
 
-Conclusion
+### Conclusion
 
 Each of these languages handles error management differently, reflecting their unique design philosophies and the specific needs of their user base. Python, with its EAFP approach and comprehensive exception hierarchy, offers a robust mechanism for error handling and recovery. TypeScript has a more modest built-in error handling approach but can be extended as needed. C++, on the other hand, offers multiple mechanisms for error management and supports the use of exceptions for separating error detection from its handling.
 
@@ -1137,8 +1173,7 @@ Let's see how this plays out in our three programming languages of interest.
 Python:
 In Python, defining a class is straightforward and typically starts with the keyword class followed by the class name. Methods within a class are defined similarly to regular Python functions, with one peculiar distinction—the mandatory self parameter that refers to the instance of the class. Creating an object is as simple as calling the class name as if it were a function. Here's an example:
 
-python
-Copy code
+```python
 class PythonClass:
     def __init__(self, attribute):
         self.attribute = attribute
@@ -1148,11 +1183,12 @@ class PythonClass:
 
 object = PythonClass("Hello, Python!")
 print(object.method())  # Outputs: Hello, Python!
+```
+
 TypeScript:
 In TypeScript, class definitions also start with the class keyword, followed by the class name. TypeScript brings in stricter type checking, which requires the types of attributes and method return values to be explicitly declared. An object is created in the same way as in Python, by invoking the class:
 
-typescript
-Copy code
+```typescript
 class TypeScriptClass {
     attribute: string;
 
@@ -1167,11 +1203,12 @@ class TypeScriptClass {
 
 let object = new TypeScriptClass("Hello, TypeScript!");
 console.log(object.method());  // Outputs: Hello, TypeScript!
+```
+
 C++:
 C++ provides a more comprehensive and complex mechanism for class definition. The class definition begins with the keyword class, followed by the class name, and enclosed within braces {}. A semicolon ; marks the end of the class definition. To access the class's members, we use the dot operator . or the arrow operator ->, depending on whether we're dealing with an object or a pointer to an object, respectively:
 
-cpp
-Copy code
+```cpp
 #include <iostream>
 #include <string>
 
@@ -1193,6 +1230,8 @@ int main() {
     std::cout << object.method();  // Outputs: Hello, C++!
     return 0;
 }
+```
+
 In the above examples, we have explored the creation of classes and objects in Python, TypeScript, and C++. As we can see, although the syntax varies across these languages, the underlying concept remains the same. Each language allows us to define classes as blueprints for objects and instantiate these blueprints into concrete objects.
 
 With this foundational knowledge of classes and objects, we're now well-prepared to delve deeper into the intricacies of OOP. Up next, we'll explore how these languages handle inheritance and polymorphism, essential concepts that further enrich the power and flexibility of Object-Oriented Programming.
@@ -1210,8 +1249,7 @@ Let's delve into how each of these languages handle these concepts.
 Python:
 In Python, inheritance is accomplished by passing the parent class as a parameter to the definition of the child class. Python supports multiple inheritances, meaning a child class can have more than one parent class. Polymorphism in Python is implemented intuitively. Due to its dynamic typing, any function can be called on any object, and if the method exists in the object's class, it will be successfully invoked.
 
-python
-Copy code
+```python
 class Parent:
     def method(self):
         return "Parent's method"
@@ -1230,11 +1268,12 @@ def call_method(obj):
 
 call_method(child)  # Outputs: Parent's method
 call_method(Parent())  # Outputs: Parent's method
+```
+
 TypeScript:
 In TypeScript, inheritance is achieved using the extends keyword. TypeScript, being statically typed, supports polymorphism through the use of interfaces and abstract classes. Here, we employ a common interface to depict polymorphism:
 
-typescript
-Copy code
+```typescript
 interface IParent {
     method(): string;
 }
@@ -1262,11 +1301,12 @@ function callMethod(obj: IParent) {
 
 callMethod(child);  // Outputs: Parent's method
 callMethod(new Parent());  // Outputs: Parent's method
+```
+
 C++:
 C++ uses the : operator to denote inheritance. Polymorphism is achieved using virtual functions, where a base class declares a virtual method, and this method can be overridden in any derived class. Pointers or references to the base class type can be used to point to objects of the derived class, and when the virtual function is invoked, the version in the derived class is called.
 
-cpp
-Copy code
+```cpp
 #include<iostream>
 using namespace std;
 
@@ -1300,6 +1340,8 @@ int main() {
 
     return 0;
 }
+```
+
 In this section, we've examined the mechanisms of inheritance and polymorphism in Python, TypeScript, and C++. These principles are pivotal in OOP, enabling the development of robust, scalable, and maintainable code. Up next, we'll look at abstraction and encapsulation, the remaining two principles of Object-Oriented Programming, and compare their implementations in these languages.
 
 ## Section 7.4: Abstraction and Encapsulation
@@ -1315,8 +1357,7 @@ Let's investigate how these principles are supported in each language.
 Python:
 Python supports abstraction through the use of abstract base classes (ABCs). You can create an ABC by importing the abc module and using the @abstractmethod decorator. As for encapsulation, Python does not have strong support for it as it doesn't have private or protected visibility modifiers like other OOP languages. Instead, it uses naming conventions to suggest the level of visibility.
 
-python
-Copy code
+```python
 from abc import ABC, abstractmethod
 
 class AbstractClassExample(ABC):
@@ -1333,11 +1374,12 @@ class AnotherSubclass(AbstractClassExample):
 # But we can instantiate the subclass and call the abstract method
 x = AnotherSubclass()
 x.do_something()  # Outputs: The subclass is doing something
+```
+
 TypeScript:
 In TypeScript, abstraction is achieved through abstract classes and interfaces. TypeScript supports encapsulation with the visibility modifiers public, private, and protected.
 
-typescript
-Copy code
+```typescript
 abstract class AbstractClass {
     abstract doSomething(): void;
 }
@@ -1351,11 +1393,12 @@ class SubClass extends AbstractClass {
 // We can't instantiate AbstractClass, but we can instantiate SubClass
 let x = new SubClass();
 x.doSomething();  // Outputs: The subclass is doing something
+```
+
 C++:
 C++ supports abstraction through abstract classes, which are declared using a pure virtual function. Encapsulation is implemented with the public, private, and protected access specifiers.
 
-cpp
-Copy code
+```cpp
 #include<iostream>
 using namespace std;
 
@@ -1380,6 +1423,8 @@ int main() {
 
     return 0;
 }
+```
+
 In this section, we've discussed the principles of abstraction and encapsulation in the context of Python, TypeScript, and C++. These fundamental OOP principles are vital in creating code that is flexible, maintainable, and scalable. In the next chapter, we will explore the intriguing world of functional programming in these three languages, a paradigm that offers a different perspective on how programs can be constructed and understood.
 
 ## Section 7.5: Conclusion
@@ -1430,32 +1475,35 @@ The emphasis on immutability in functional programming is rooted in predictabili
 
 Python provides built-in support for immutable data types. The language's primitive types, like integers, floats, and strings, are inherently immutable. Tuples are an example of an immutable compound data type. Once a tuple is created in Python, its contents cannot be changed. Python also supports immutable sets called frozensets.
 
-python
-Copy code
+```python
 # Creating an immutable tuple in Python
 my_tuple = (1, 2, 3)
 
 # Trying to change a value will result in an error
 my_tuple[0] = 0  # TypeError: 'tuple' object does not support item assignment
+```
+
 TypeScript, as a statically typed superset of JavaScript, inherits JavaScript's data handling characteristics. TypeScript treats primitive types like numbers, strings, and booleans as immutable, but objects and arrays are mutable by default. However, TypeScript (and JavaScript) allows developers to mimic immutability in objects and arrays by using methods such as Object.freeze().
 
-typescript
-Copy code
+```typescript
 // Creating an immutable object in TypeScript
 const myObject = Object.freeze({key: "value"});
 
 // Trying to change a value will be ignored
 myObject.key = "other value";  // No error, but the change is ignored
 console.log(myObject.key);  // Prints "value"
+```
+
 In C++, the concept of immutability isn't as deeply embedded into the language as in Python or TypeScript. Primitive types and objects can be mutated freely by default. However, C++ provides the const keyword, which can be used to make variables immutable. It's up to the programmer to use const where appropriate to ensure data remains unchanged.
 
-cpp
-Copy code
+```cpp
 // Creating an immutable integer in C++
 const int myInteger = 10;
 
 // Trying to change the value will result in a compilation error
 myInteger = 20;  // Error: assignment of read-only variable 'myInteger'
+```
+
 In conclusion, all three languages provide mechanisms to handle immutable data, each with its own flavor. Python and TypeScript incorporate immutability in their design, while C++ leaves more responsibility to the programmer. As we continue to explore functional programming in these languages, we will see how this difference in philosophy influences the approach to higher-order functions, our next topic.
 
 ## Section 8.3: Higher-Order Functions
@@ -1466,8 +1514,7 @@ The usage of higher-order functions contributes to the flexibility of functional
 
 Python, a multi-paradigm language with a strong support for functional programming, natively supports higher-order functions. Functions in Python are objects, and can therefore be used in the same way as any other object. This includes being defined within another function, returned as a result, or passed as an argument to another function. A common example of a higher-order function in Python is the built-in map function, which applies a function to every item of an iterable.
 
-python
-Copy code
+```python
 # Python: Demonstrating a higher-order function with map
 def square(x):
     return x ** 2
@@ -1476,19 +1523,21 @@ numbers = [1, 2, 3, 4]
 squared = map(square, numbers)
 
 print(list(squared))  # Outputs: [1, 4, 9, 16]
+```
+
 TypeScript also fully supports higher-order functions, owing to its JavaScript roots. Functions in TypeScript can be used in the same ways as in Python. They can be stored in variables, included in arrays, passed as arguments, and returned from other functions. TypeScript also supports anonymous functions and arrow functions, providing more flexible syntax for defining and using higher-order functions.
 
-typescript
-Copy code
+```typescript
 // TypeScript: Demonstrating a higher-order function with map
 let numbers = [1, 2, 3, 4];
 let squared = numbers.map(x => x * x);
 
 console.log(squared);  // Outputs: [1, 4, 9, 16]
+```
+
 The case with C++ is more nuanced. Traditional C++ doesn't treat functions as first-class citizens, and thus it doesn't natively support higher-order functions in the same way as Python or TypeScript. However, with the introduction of C++11, the language has included the support for lambdas (anonymous functions), and functions can now be assigned to auto-typed variables, passed as arguments, and returned from other functions, effectively enabling higher-order functions.
 
-cpp
-Copy code
+```cpp
 // C++: Demonstrating a higher-order function with transform
 #include <vector>
 #include <algorithm>
@@ -1504,6 +1553,8 @@ int main() {
     for(int i : squared)
         std::cout << i << " ";  // Outputs: 1 4 9 16 
 }
+```
+
 In conclusion, all three languages - Python, TypeScript, and C++ - provide support for higher-order functions, albeit with different levels of directness and syntactic elegance. As we proceed, we'll explore more functional programming concepts, such as lambdas and closures, and how these languages implement them.
 
 ## Section 8.4: Lambdas and Closures
@@ -1514,8 +1565,7 @@ Python is renowned for its simplicity and readability, and the implementation of
 
 Closures in Python are created when a nested function references a value from its enclosing scope. Python's garbage collector retains the referenced variables even after the outer function has finished executing, making them available to the closure.
 
-python
-Copy code
+```python
 # Python: Demonstrating a lambda function and a closure
 def multiplier(n):
     return lambda x: x * n
@@ -1523,22 +1573,24 @@ def multiplier(n):
 double = multiplier(2)  # 'double' is a closure
 
 print(double(5))  # Outputs: 10
+```
+
 TypeScript, just like its superset JavaScript, offers more flexibility when it comes to lambda functions. Defined using arrow syntax, TypeScript lambda functions, or arrow functions, support both a concise syntax for single expression functions, and a more comprehensive syntax for larger functions. Closures in TypeScript work in a similar way to Python. The language environment retains the captured variables for as long as they're referenced by any existing closure.
 
-typescript
-Copy code
+```typescript
 // TypeScript: Demonstrating an arrow function and a closure
 let multiplier = (n: number) => (x: number) => x * n;
 
 let double = multiplier(2);  // 'double' is a closure
 
 console.log(double(5));  // Outputs: 10
+```
+
 C++, starting from the C++11 standard, has supported lambda functions and closures, marking a significant enhancement to the language's functional programming capabilities. Lambda functions in C++ are introduced using square brackets [], followed by an optional parameter list, the -> operator for specifying the return type (which can often be omitted as it can be automatically deduced), and a function body enclosed in curly braces {}.
 
 C++ lambdas capture external variables in their "capture list" denoted in square brackets. By default, C++ lambdas do not capture any external variables unless specified, in which case it can be done either by value (copied) or by reference (referenced).
 
-cpp
-Copy code
+```cpp
 // C++: Demonstrating a lambda function and a closure
 #include <iostream>
 
@@ -1551,6 +1603,8 @@ auto double = multiplier(2);  // 'double' is a closure
 int main() {
     std::cout << double(5);  // Outputs: 10
 }
+```
+
 In conclusion, all three languages, Python, TypeScript, and C++, offer support for lambdas and closures, each with their own syntax and characteristics. Understanding these concepts and their implementation can improve your code's flexibility and expressiveness, key aspects of functional programming. In the next section, we'll synthesize our learning and discuss the implications of functional programming practices in these languages.
 
 ## Section 8.5: Conclusion
@@ -1597,8 +1651,7 @@ The threading module in Python is used for working with threads. Despite the lim
 
 Here's a simple example of creating and managing threads in Python using the threading module:
 
-python
-Copy code
+```python
 import threading
 
 def print_numbers():
@@ -1622,10 +1675,11 @@ t1.join()
 t2.join()
 
 print('Done')
+```
+
 The multiprocessing module, on the other hand, sidesteps the GIL by using subprocesses instead of threads. Each subprocess gets its own Python interpreter and memory space so that the GIL won't be a bottleneck. The multiprocessing module is particularly effective when you need to perform CPU-bound tasks, and you want to take advantage of multiple cores or processors on your machine.
 
-python
-Copy code
+```python
 from multiprocessing import Process
 
 def print_numbers():
@@ -1649,6 +1703,8 @@ p1.join()
 p2.join()
 
 print('Done')
+```
+
 As you can see, the code for threading and multiprocessing is strikingly similar, making it relatively easy to switch between the two based on your application's needs.
 
 Finally, Python offers the concurrent.futures module, a higher-level API for using multi-threading and multi-processing. This module provides a ThreadPoolExecutor and a ProcessPoolExecutor class, which manage a pool of threads or processes respectively. They handle details like creating and scheduling tasks, obtaining results, and exception handling.
@@ -1665,8 +1721,7 @@ JavaScript (and therefore TypeScript) uses an event loop and a callback queue to
 
 In the Node.js environment, TypeScript also has access to a module called worker_threads that allows for CPU-bound tasks to run in parallel via threads, much like the traditional threading model of other languages. Here's a simple example of using worker threads in TypeScript:
 
-typescript
-Copy code
+```typescript
 import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
 
 if (isMainThread) {
@@ -1690,10 +1745,11 @@ if (isMainThread) {
     // Send the value back to the main thread.
     parentPort.postMessage(workerData.value);
 }
+```
+
 Promises and async/await are two abstractions provided by JavaScript and TypeScript to work with asynchronous operations. Promises are objects that represent the eventual completion or failure of an asynchronous operation and its resulting value. Async/await syntax is built on promises and provides a more direct, linear style of asynchronous code.
 
-typescript
-Copy code
+```typescript
 // Example of Promises
 function asyncOperation(): Promise<string> {
     return new Promise((resolve, reject) => {
@@ -1714,6 +1770,8 @@ async function runAsyncOperation() {
 }
 
 runAsyncOperation();
+```
+
 While JavaScript and TypeScript are not traditionally multithreaded languages, they have robust capabilities for handling concurrency, largely driven by their event-driven, non-blocking architectures. The worker_threads module provides additional capabilities for handling CPU-bound tasks, and promises and async/await syntax allow for more readable and maintainable asynchronous code. In the next section, we'll explore how C++ handles concurrency and multithreading.
 
 ## Section 9.4: Concurrency in C++
@@ -1724,8 +1782,7 @@ The addition of the threading library in the C++11 standard marked a major enhan
 
 Creating a thread in C++ is straightforward. Here is an example:
 
-cpp
-Copy code
+```cpp
 #include <iostream>
 #include <thread>
 
@@ -1738,14 +1795,15 @@ int main() {
     t.join();
     return 0;
 }
+```
+
 In this example, std::thread t(hello); creates a new thread that starts executing the function hello. The join method called on t makes the main thread wait for the new thread to finish before continuing.
 
 While this simple threading model is powerful, it also opens up a range of potential issues, including race conditions, deadlocks, and other synchronization problems. These are risks when multiple threads can access and manipulate the same data simultaneously.
 
 C++ provides a range of mechanisms to handle these situations. Mutexes, locks, and condition variables are among the synchronization primitives available in the standard library:
 
-cpp
-Copy code
+```cpp
 #include <iostream>
 #include <thread>
 #include <mutex>
@@ -1770,12 +1828,13 @@ int main() {
 
     return 0;
 }
+```
+
 In the example above, a mutex is used to synchronize access to std::cout. By locking the mutex before accessing std::cout and unlocking it afterward, we ensure that th1 and th2 can't interfere with each other's output.
 
 The C++ standard library also includes higher-level concurrency features like futures and promises, which provide mechanisms to retrieve data from asynchronous operations:
 
-cpp
-Copy code
+```cpp
 #include <iostream>
 #include <future>
 
@@ -1788,6 +1847,8 @@ int main() {
     std::cout << "The thread returned " << result.get() << std::endl;
     return 0;
 }
+```
+
 In the example above, std::async runs the function calculate in a separate thread and returns a std::future that will hold the return value when it's ready. The get function then waits for the result and retrieves it.
 
 In conclusion, C++ provides a rich set of tools for concurrent and multithreaded programming, including threads, locks, condition variables, futures, and promises. It grants developers the power and flexibility to efficiently use multi-core processors. However, with this power comes a significant responsibility to carefully synchronize shared data to avoid race conditions and other issues. In the next section, we will explore additional libraries and tools that aid in managing concurrency in Python, TypeScript, and C++.
@@ -1796,14 +1857,13 @@ In conclusion, C++ provides a rich set of tools for concurrent and multithreaded
 
 While Python, TypeScript, and C++ each provide built-in capabilities for handling concurrency, there are additional libraries and tools available that can make concurrent programming easier, more powerful, and more efficient. These libraries often abstract away some of the more complex aspects of concurrency, such as thread management and synchronization, and provide developers with more advanced features like thread pools, futures, and more.
 
-Python
+### Python
 
 Python's built-in threading and multiprocessing modules already offer a significant range of functionality for creating and managing threads and processes. However, the concurrent.futures module provides a higher-level interface for asynchronously executing callables.
 
 The primary feature of concurrent.futures is the ThreadPoolExecutor and ProcessPoolExecutor classes, which manage a pool of threads or processes respectively. They can execute callable tasks asynchronously and return a Future object. This object represents a computation that hasn't necessarily completed yet, and you can check its status or wait for it to finish.
 
-python
-Copy code
+```python
 from concurrent.futures import ThreadPoolExecutor
 
 def task(n):
@@ -1812,16 +1872,17 @@ def task(n):
 with ThreadPoolExecutor() as executor:
     future = executor.submit(task, 5)
     print(f'Result: {future.result()}')
+```
+
 In this Python example, executor.submit() schedules the task() function to be executed and returns a Future object. future.result() then blocks until the computation is done and returns the result.
 
-TypeScript
+### TypeScript
 
 Concurrency in TypeScript, especially in the context of a Node.js environment, often deals with managing asynchronous IO operations rather than computation-bound threading. That being said, Node.js does provide the worker_threads module, which allows for CPU-intensive operations to run in parallel on separate threads.
 
 The Worker class in the worker_threads module allows creating separate JavaScript execution threads. Here's an example of how to use workers in Node.js with TypeScript:
 
-typescript
-Copy code
+```typescript
 import { Worker } from 'worker_threads';
 
 const worker = new Worker(`
@@ -1832,16 +1893,17 @@ const worker = new Worker(`
 worker.on('message', (result) => {
     console.log(`Result: ${result}`);
 });
+```
+
 In this TypeScript example, a new worker is created to execute a small script. The parentPort.postMessage() method in the worker sends a message (in this case, the result of a computation) back to the parent thread, which is logged to the console.
 
-C++
+### C++
 
 Boost.Thread is a popular library in C++ for more advanced multithreading, beyond what the standard library offers. It provides a wide variety of features, including thread management, synchronization primitives, and even task-based programming via boost::future and boost::promise.
 
 Here's an example of using Boost.Thread to create a simple multithreaded program:
 
-cpp
-Copy code
+```cpp
 #include <boost/thread.hpp>
 #include <iostream>
 
@@ -1854,6 +1916,8 @@ int main() {
     t.join();
     return 0;
 }
+```
+
 In this C++ example, boost::thread is used very much like std::thread from the standard library, but with a larger set of capabilities.
 
 Choosing the right concurrency library often depends on the specific requirements of your application, such as the level of control you need over thread management, the type of tasks your application is performing, and the performance characteristics you need.
@@ -1906,12 +1970,13 @@ The principal mechanism Python uses to manage memory is reference counting. Each
 
 Let's consider a simple example:
 
-python
-Copy code
+```python
 x = [1, 2, 3]  # creates a list object, reference count is 1
 y = x          # increases reference count to 2
 del x          # decreases reference count to 1
 del y          # decreases reference count to 0, object is deallocated
+```
+
 While reference counting is a simple and effective memory management mechanism, it has a crucial limitation—it cannot handle circular references. Consider a scenario where two objects reference each other but are not referenced by any other object. The reference count for each object would be one, despite the fact they're inaccessible from the rest of the program. To resolve this issue, Python includes a garbage collector that is capable of detecting and collecting such circularly referenced objects.
 
 The garbage collector complements the reference counting system. While the reference counting system handles most objects, the garbage collector periodically intervenes to clean up circular references and other complex scenarios that the reference counting system can't handle. Python's garbage collector uses an algorithm known as cycle detection to find groups of objects that are only accessible from each other and thus can be safely deallocated.
@@ -1928,15 +1993,17 @@ TypeScript, as a superset of JavaScript, relies on the JavaScript engine for mem
 
 When a variable is defined in TypeScript (and by extension, JavaScript), memory is automatically allocated to store its value. This allocation is performed by the V8 engine's memory manager. The V8 engine divides the JavaScript memory into two spaces: the new space (also known as the young generation), where new objects are created, and the old space (or old generation), where long-lived objects are stored.
 
-typescript
-Copy code
+```typescript
 let x = {a: 1, b: 2};  // A new object is created and memory is allocated
+```
+
 The V8 engine employs a garbage collection technique known as the mark-and-sweep algorithm to manage memory. This process is divided into two main phases: the mark phase and the sweep phase. In the mark phase, the garbage collector starts from root objects (like those attached to the global object) and traverses the object graph, marking every object it encounters as "alive". In the sweep phase, the garbage collector scans the memory heap, identifying and deallocating (sweeping) any objects that were not marked as "alive" during the mark phase.
 
-typescript
-Copy code
+```typescript
 let x = {a: 1, b: 2};
 x = null;  // The object {a: 1, b: 2} is now eligible for garbage collection
+```
+
 While the mark-and-sweep algorithm is effective, it can pause program execution, leading to what's known as "stop-the-world" moments. To alleviate this issue, the V8 engine's garbage collector also implements incremental and concurrent techniques, which break down the garbage collection work into smaller units and run them alongside the application, minimizing disruptions.
 
 One significant point to understand is that memory leaks can still occur in TypeScript, even with automatic garbage collection. For instance, if an object is held in memory through a closure or due to forgotten event listeners and timers, the garbage collector will not be able to clean it up, leading to an unintentional memory leak. Therefore, TypeScript developers need to be aware of these potential pitfalls and code responsibly to ensure efficient memory use.
@@ -1949,37 +2016,40 @@ After exploring memory management in high-level languages like Python and TypeSc
 
 C++ is a statically typed, compiled language that provides low-level access to memory. The C++ memory model is straightforward. When we declare a variable, the memory needed to store its value is allocated either on the stack or the heap. Variables with automatic storage duration, which includes local variables inside functions, are allocated on the stack, while dynamic memory is allocated on the heap using operators new and delete.
 
-c++
-Copy code
+```c++
 int main() {
     int x;              // Stack memory allocation
     int* y = new int;   // Heap memory allocation
     delete y;           // Heap memory deallocation
     return 0;
 }
+```
+
 In the above example, the variable x is allocated on the stack. The variable y is a pointer to an integer allocated on the heap using the new operator. After we're done using y, it's our responsibility to deallocate the memory it points to using the delete operator.
 
 This manual memory management model gives us granular control over when and how memory is allocated and deallocated, allowing for highly efficient memory usage. However, it also places a lot of responsibility on our shoulders. Failing to properly manage memory can lead to issues such as memory leaks and dangling pointers.
 
 A memory leak occurs when dynamically allocated memory is not deallocated after use. Over time, these leaks can consume significant amounts of memory, slowing down or even crashing the system. In the previous example, if we neglected to include the delete y; line, we would have a memory leak.
 
-c++
-Copy code
+```c++
 int main() {
     int* y = new int;   // Heap memory allocation
     // delete y;        // Forgotten deallocation => memory leak
     return 0;
 }
+```
+
 A dangling pointer, on the other hand, is a pointer that points to memory that has already been deallocated. Attempting to access such memory leads to undefined behavior, which can cause bugs that are notoriously hard to track down.
 
-c++
-Copy code
+```c++
 int main() {
     int* y = new int;   // Heap memory allocation
     delete y;           // Heap memory deallocation
     *y = 5;             // Dangling pointer => undefined behavior
     return 0;
 }
+```
+
 To avoid these pitfalls, C++ developers must adhere to good programming practices such as always deallocating dynamically allocated memory when it's no longer needed and nullifying pointers after deallocation. However, even the most disciplined developer can make mistakes, which is why modern C++ encourages the use of smart pointers (unique_ptr, shared_ptr, weak_ptr) provided in the standard library. These automate the process of memory deallocation, thereby reducing the risk of memory leaks.
 
 As you can see, C++'s memory management model is quite different from that of Python and TypeScript. It provides more control, but also requires a greater understanding and more careful handling. In the next section, we'll compare these different approaches and discuss the trade-offs between manual and automatic memory management. Understanding these trade-offs is crucial when choosing a language for a particular project, as it directly impacts both the performance and complexity of the code.
@@ -2132,8 +2202,7 @@ Iterators are used to point at the memory addresses of STL containers. They are 
 
 Here is an example of how these STL components work together:
 
-cpp
-Copy code
+```cpp
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -2145,6 +2214,8 @@ int main() {
         std::cout << i << ' ';
     }
 }
+```
+
 In this code snippet, std::vector<int> is a container that holds integers. std::sort is an algorithm that sorts the elements in the vector in ascending order. v.begin() and v.end() are iterators pointing to the beginning and end of the vector, respectively.
 
 Apart from the STL, the C++ Standard Library includes a host of other libraries for tasks such as input/output processing (<iostream>), string manipulation (<string>), and more.
