@@ -1,3 +1,19 @@
+# Table of Contents
+1. [Chapter 1: Introduction](#chapter-1-introduction)
+2. [Chapter 2: Understanding Programming Languages](#chapter-2-understanding-programming-languages)
+3. [Chapter 3: Introduction to Python](#chapter-3-introduction-to-python)
+4. [Chapter 4: Introduction to TypeScript](#chapter-4-introduction-to-typescript)
+5. [Chapter 5: Introduction to C++](#chapter-5-introduction-to-c)
+6. [Chapter 6: Comparing Syntax and Semantics](#chapter-6-comparing-syntax-and-semantics)
+7. [Chapter 7: Object-Oriented Programming in Python, TypeScript, and C++](#chapter-7-object-oriented-programming-in-python-typescript-and-c)
+8. [Chapter 8: Functional Programming in Python, TypeScript, and C++](#chapter-8-functional-programming-in-python-typescript-and-c)
+9. [Chapter 9: Concurrency and Multithreading](#chapter-9-concurrency-and-multithreading)
+10. [Chapter 10: Memory Management](#chapter-10-memory-management)
+11. [Chapter 11: Standard Libraries and Frameworks](#chapter-11-standard-libraries-and-frameworks)
+12. [Chapter 12: Use Cases and Applications](#chapter-12-use-cases-and-applications)
+13. [Chapter 13: Future of Python, TypeScript, and C++](#chapter-13-future-of-python-typescript-and-c)
+14. [Chapter 14: Conclusion](#chapter-14-conclusion)
+
 # Chapter 1: Introduction
 
 ## Section 1.1: Introduction
