@@ -579,13 +579,13 @@ For instance, interfaces in TypeScript allow you to define the structure of an o
 
 ```typescript
 interface Person {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }
 
 let user: Person = {
-    name: 'Alice',
-    age: 25
+  name: 'Alice',
+  age: 25
 };
 ```
 
@@ -593,7 +593,7 @@ Generics provide a way to create reusable components, which can work over a vari
 
 ```typescript
 function identity<T>(arg: T): T {
-    return arg;
+  return arg;
 }
 
 let output = identity<string>('myString');  // type of output will be 'string'
@@ -924,7 +924,7 @@ In TypeScript, for, while, and do-while loops are used. The for loop, similar to
 
 ```typescript
 for(let i = 0; i < 5; i++) {
-    console.log(i);  // prints numbers 0 to 4
+  console.log(i);  // prints numbers 0 to 4
 }
 ```
 
@@ -933,8 +933,8 @@ The while and do-while loops operate similarly to Python:
 ```typescript
 let i = 0;
 while(i < 5) {
-    console.log(i);
-    i++;
+  console.log(i);
+  i++;
 }  // prints numbers 0 to 4
 ```
 
@@ -964,12 +964,12 @@ In TypeScript and C++, conditionals are constructed with if, else if, and else. 
 
 ```typescript
 let x = 10;
-if(x < 0) {
-    console.log("negative");
-} else if(x == 0) {
-    console.log("zero");
+if (x < 0) {
+  console.log('negative');
+} else if (x == 0) {
+  console.log('zero');
 } else {
-    console.log("positive");  // prints "positive"
+  console.log('positive');  // prints "positive"
 }
 ```
 
@@ -1007,10 +1007,10 @@ TypeScript, like JavaScript, provides several ways to define a function. The tra
 
 ```typescript
 function greet(name: string) {
-    console.log(`Hello, ${name}`);
+  console.log(`Hello, ${name}`);
 }
 
-greet("Alice");  // prints "Hello, Alice"
+greet('Alice');  // prints "Hello, Alice"
 ```
 
 In C++, a function must be declared with a specific type, which denotes the type of value the function returns. If no value is to be returned, the void keyword is used:
@@ -1048,13 +1048,13 @@ TypeScript methods are defined inside a class using a function declaration witho
 
 ```typescript
 class Greeter {
-    greet(name: string) {
-        console.log(`Hello, ${name}`);
-    }
+  greet(name: string) {
+    console.log(`Hello, ${name}`);
+  }
 }
 
 let greeter = new Greeter();
-greeter.greet("Alice");  // prints "Hello, Alice"
+greeter.greet('Alice');  // prints "Hello, Alice"
 ```
 
 In C++, methods (often referred to as member functions) are declared within a class and defined either inline or outside the class declaration. Within a class method, this pointer refers to the object invoking the method:
@@ -1102,11 +1102,11 @@ TypeScript, and JavaScript as a whole, doesn't follow the EAFP philosophy like P
 
 ```typescript
 try {
-    throw new Error('An error occurred');
+  throw new Error('An error occurred');
 } catch (e) {
-    console.error(e.message);
+  console.error(e.message);
 } finally {
-    console.log('Cleanup code goes here');
+  console.log('Cleanup code goes here');
 }
 ```
 
@@ -1206,18 +1206,18 @@ In TypeScript, class definitions also start with the class keyword, followed by 
 
 ```typescript
 class TypeScriptClass {
-    attribute: string;
+  attribute: string;
 
-    constructor(attribute: string) {
-        this.attribute = attribute;
-    }
+  constructor(attribute: string) {
+    this.attribute = attribute;
+  }
 
-    method(): string {
-        return this.attribute;
-    }
+  method(): string {
+    return this.attribute;
+  }
 }
 
-let object = new TypeScriptClass("Hello, TypeScript!");
+let object = new TypeScriptClass('Hello, TypeScript!');
 console.log(object.method());  // Outputs: Hello, TypeScript!
 ```
 
@@ -1291,19 +1291,19 @@ In TypeScript, inheritance is achieved using the extends keyword. TypeScript, be
 
 ```typescript
 interface IParent {
-    method(): string;
+  method(): string;
 }
 
 class Parent implements IParent {
-    method(): string {
-        return "Parent's method";
-    }
+  method(): string {
+    return "Parent's method";
+  }
 }
 
 class Child extends Parent {
-    childMethod(): string {
-        return "Child's method";
-    }
+  childMethod(): string {
+    return "Child's method";
+  }
 }
 
 // Inheritance
@@ -1312,7 +1312,7 @@ console.log(child.method());  // Outputs: Parent's method
 
 // Polymorphism
 function callMethod(obj: IParent) {
-    console.log(obj.method());
+  console.log(obj.method());
 }
 
 callMethod(child);  // Outputs: Parent's method
@@ -1397,13 +1397,13 @@ In TypeScript, abstraction is achieved through abstract classes and interfaces. 
 
 ```typescript
 abstract class AbstractClass {
-    abstract doSomething(): void;
+  abstract doSomething(): void;
 }
 
 class SubClass extends AbstractClass {
-    doSomething() {
-        console.log("The subclass is doing something");
-    }
+  doSomething() {
+    console.log('The subclass is doing something');
+  }
 }
 
 // We can't instantiate AbstractClass, but we can instantiate SubClass
@@ -1503,10 +1503,10 @@ TypeScript, as a statically typed superset of JavaScript, inherits JavaScript's 
 
 ```typescript
 // Creating an immutable object in TypeScript
-const myObject = Object.freeze({key: "value"});
+const myObject = Object.freeze({key: 'value'});
 
 // Trying to change a value will be ignored
-myObject.key = "other value";  // No error, but the change is ignored
+myObject.key = 'other value';  // No error, but the change is ignored
 console.log(myObject.key);  // Prints "value"
 ```
 
@@ -1741,25 +1741,25 @@ In the Node.js environment, TypeScript also has access to a module called worker
 import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
 
 if (isMainThread) {
-    // This is the main thread.
-  
-    // Create a new worker
-    const worker = new Worker(__filename, {
-        workerData: {
-            value: 'Hello, World!'
-        },
-    });
+  // This is the main thread.
 
-    // Listen for messages from the worker and print them.
-    worker.on('message', (msg) => {
-        console.log('Received:', msg);
-    });
+  // Create a new worker
+  const worker = new Worker(__filename, {
+    workerData: {
+      value: 'Hello, World!'
+    },
+  });
+
+  // Listen for messages from the worker and print them.
+  worker.on('message', (msg) => {
+    console.log('Received:', msg);
+  });
 
 } else {
-    // This is not the main thread.
-  
-    // Send the value back to the main thread.
-    parentPort.postMessage(workerData.value);
+  // This is not the main thread.
+
+  // Send the value back to the main thread.
+  parentPort.postMessage(workerData.value);
 }
 ```
 
@@ -1768,21 +1768,21 @@ Promises and async/await are two abstractions provided by JavaScript and TypeScr
 ```typescript
 // Example of Promises
 function asyncOperation(): Promise<string> {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Operation completed');
-        }, 1000);
-    });
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Operation completed');
+    }, 1000);
+  });
 }
 
 asyncOperation().then(value => {
-    console.log(value); // Operation completed
+  console.log(value); // Operation completed
 });
 
 // Example of async/await
 async function runAsyncOperation() {
-    const value = await asyncOperation();
-    console.log(value); // Operation completed
+  const value = await asyncOperation();
+  console.log(value); // Operation completed
 }
 
 runAsyncOperation();
@@ -1902,12 +1902,12 @@ The Worker class in the worker_threads module allows creating separate JavaScrip
 import { Worker } from 'worker_threads';
 
 const worker = new Worker(`
-    const { parentPort } = require('worker_threads');
-    parentPort.postMessage(2 * 2);
+  const { parentPort } = require('worker_threads');
+  parentPort.postMessage(2 * 2);
 `, { eval: true });
 
 worker.on('message', (result) => {
-    console.log(`Result: ${result}`);
+  console.log(`Result: ${result}`);
 });
 ```
 
