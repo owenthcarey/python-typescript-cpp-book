@@ -1,3 +1,5 @@
+# Python, TypeScript, C++ Book
+
 # Table of Contents
 1. [Chapter 1: Introduction](#chapter-1-introduction)
 2. [Chapter 2: Understanding Programming Languages](#chapter-2-understanding-programming-languages)
@@ -18,17 +20,17 @@
 
 ## Section 1.1: Introduction
 
-The digital world we live in today is a direct result of meticulous software engineering, and at the core of this marvel lies the fundamental unit of creation in software - programming languages. They are the bedrock upon which we build our digital dreams, the syntax and semantics through which we communicate with machines. Whether it's web applications that connect us, scientific computation that advances our knowledge, or the interactive games that entertain us, every digital experience is crafted in the abstract architecture of a programming language.
+The digital world we live in is a direct result of meticulous software engineering, and at the core of this marvel lies the fundamental unit of creation in software: programming languages. They are the bedrock upon which we build our digital dreams, the syntax and semantics through which we communicate with machines. Whether it’s web applications that connect us, scientific computation that advances our knowledge, or the interactive games that entertain us, every digital experience is crafted in the abstract architecture of a programming language.
 
-There is a veritable sea of programming languages, each with its unique set of attributes, capabilities, and idiosyncrasies. From the machine-near precision of assembly to the human-like simplicity of Python, these languages span a wide spectrum of abstraction levels and paradigms. Aspiring and seasoned programmers alike find themselves navigating these waters, charting a course through the wave of possibilities.
+There is a sea of programming languages, each with its unique set of attributes, capabilities, and idiosyncrasies. From the fine-grained control of assembly to the human-like simplicity of Python, these languages span a wide spectrum of abstraction levels and paradigms. Aspiring and seasoned programmers alike find themselves navigating these waters, charting a course through the wave of possibilities.
 
-But why are there so many languages? Wouldn't one suffice? The beauty of programming lies in this very diversity. Different languages are designed with different goals and considerations in mind. Some prioritize speed and efficiency, others favor readability and simplicity, while some strive for a balance of attributes to cater to a broader range of applications. The choice of language often depends on the problem at hand, the environment, and the available resources.
+But why are there so many languages? Wouldn’t one suffice? The beauty of programming lies in this very diversity. Different languages are designed with different goals and considerations in mind. Some prioritize speed and efficiency. Some favor readability and simplicity. Some strive for a balance of attributes to cater to a broader range of applications. The choice of language often depends on the problem at hand, the environment, and the available resources.
 
-In this book, we'll embark on a journey to explore three of the most widely used and influential programming languages of our time: Python, TypeScript, and C++. These languages, each representative of different paradigms and use-cases, provide us with a rich canvas to paint a comprehensive picture of modern programming.
+In this book, we’ll embark on a journey to explore three of the most widely used and influential programming languages of our time: Python, TypeScript, and C++. These languages, each representative of different paradigms and use cases, provide us with a rich canvas to paint a comprehensive picture of modern programming.
 
-So, whether you're a beginner taking your first steps into the world of programming, or an experienced coder aiming to diversify your toolkit, this introductory chapter serves as the doorway into the fascinating realms of Python, TypeScript, and C++. Our journey will traverse through the landscapes of these languages, diving into their history, syntax, semantics, strengths, weaknesses, use-cases, and much more.
+So whether you’re a beginner taking your first steps into the world of programming or an experienced coder aiming to diversify your toolkit, this introductory chapter serves as the doorway into the fascinating realms of Python, TypeScript, and C++. Our journey will traverse through the landscapes of these languages, diving into their history, syntax, semantics, strengths, weaknesses, use cases, and much more.
 
-We're glad to have you onboard for this exciting voyage. Let's set sail into the vast ocean of programming languages, casting our net into the deep waters of Python, TypeScript, and C++. Your journey of discovery starts here.
+I’m glad to have you onboard for this exciting voyage. Let’s set sail into the vast ocean of programming languages, casting our net into the deep waters of Python, TypeScript, and C++. Your journey of discovery starts here.
 
 ## Section 1.2: Purpose of the Book
 
