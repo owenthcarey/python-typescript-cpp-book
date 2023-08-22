@@ -180,3 +180,59 @@ Make sure your server serves `framework.py` so Pyodide can access it.
 Remember, building a full-fledged framework is a considerable task. The above
 steps give you a basic idea and a starting point. From here, iterate,
 experiment, and refine your design and architecture.
+
+---
+
+Amazing! How can I test this initial example? Should I just open
+that `index.html` you created in a browser?
+
+---
+
+While you might be tempted to open `index.html` directly in a browser, doing so
+might not work due to browser security restrictions. The JavaScript Fetch API (
+which Pyodide uses to fetch packages and Python files) will often not work with
+the `file://` protocol, resulting in CORS (Cross-Origin Resource Sharing)
+issues.
+
+Instead, you should serve the files using a web server. Here's how you can set
+up a basic web server for development purposes:
+
+## Using `http-server`
+
+1. If you haven't installed `http-server`, you can do so using `npm`:
+
+```bash
+npm install -g http-server
+```
+
+2. Navigate to the directory containing your `index.html` and `framework.py`.
+3. Start the server:
+
+```bash
+http-server
+```
+
+4. Once started, it should give you an address,
+   typically `http://127.0.0.1:8080/`. Open that in your web browser.
+
+## Using Python's Built-in HTTP Server
+
+If you have Python installed and prefer not to use Node.js and `http-server`,
+Python provides a simple HTTP server out of the box.
+
+1. Navigate to the directory containing your `index.html` and `framework.py`.
+2. For Python 3.x, run:
+
+```bash
+python -m http.server
+```
+
+3. Just like with `http-server`, you can open the provided address in your
+   browser, typically `http://127.0.0.1:8000/`.
+
+Whichever method you choose, once you navigate to the provided address in your
+web browser, you should see Python initializing and then the message "Hello,
+World!" displayed on the page. If you open the browser's console (usually by
+pressing F12), you should also see the print statement "Python is running in
+your browser!" indicating that Pyodide has successfully loaded and executed
+Python code.
